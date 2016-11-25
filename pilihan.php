@@ -5,6 +5,12 @@ echo $_SESSION['nis']; ?>
 <html >
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Marcello Ryan">
+  <meta name="description" content="Pemilu Raya OSIS MPR SMK WIKRAMA BOGOR">
+  <meta name="keywords" content="Pemilu, Raya, OSIS, MPR, SMK, Wikrama, Bogor, HTML, PHP, CSS, MDL, Material, Design, Lite, Javascript, JS, SQL">
+
   <title>Pemilu Raya | osismprwikrama.org</title>
   
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/icon?family=Material+Icons'>
@@ -12,7 +18,7 @@ echo $_SESSION['nis']; ?>
   <link rel="stylesheet" href="mdl/material.min.css">
 
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" href="assets/img/osis_bulat.png">
+  <link rel="icon" href="assets/img/logo.png">
 </head>
 
 <style>
@@ -69,11 +75,12 @@ echo $_SESSION['nis']; ?>
   color: #fff;
 }
 </style>
-<body>
+<body oncontextmenu="return false" onkeydown="return false" >    
   <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
   <main class="mdl-layout__content">
 <!-- Card 1 Begin -->
-<div class="mdl-grid" style="margin-top: 400px;">
+<!--<div class="mdl-grid" style="margin-top: 400px;">-->
+<div class="mdl-grid">
   <div class="mdl-cell mdl-cell--4-col">
 <div class="demo-card-image mdl-card uji">
   <div class="mdl-card__title mdl-card--expand"></div>
@@ -90,13 +97,13 @@ echo $_SESSION['nis']; ?>
     </h6>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <button class="mdl-button mdl-js-button" value="" name="">
+    <button class="mdl-button mdl-js-button" value="" name="" style="background-color: #424242;">
       I CHOOSE
     </button>
   </div>
 </div>
 <br/>
-<div class="demo-card-image mdl-card uji">
+<!--<div class="demo-card-image mdl-card uji">
   <div class="mdl-card__title mdl-card--expand"></div>
   <div class="mdl-card__actions">
     <span class="demo-card-image__filename" style="font-size: 1em">Muhammad Rifki Fauzi</span>
@@ -111,11 +118,11 @@ echo $_SESSION['nis']; ?>
     </h6>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <button class="mdl-button mdl-js-button" value="" name="">
+    <button class="mdl-button mdl-js-button" value="" name="" style="background-color: #424242;">
       I CHOOSE
     </button>
   </div>
-</div>
+</div>-->
 </div>
 <!-- Card 1 End -->
 
@@ -136,13 +143,13 @@ echo $_SESSION['nis']; ?>
     </h6>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <button class="mdl-button mdl-js-button" value="" name="">
+    <button class="mdl-button mdl-js-button" value="" name="" style="background-color: #424242;">
       I CHOOSE
     </button>
   </div>
 </div>
 <br/>
-<div class="demo-card-image mdl-card bayu">
+<!--<div class="demo-card-image mdl-card bayu">
   <div class="mdl-card__title mdl-card--expand"></div>
   <div class="mdl-card__actions">
     <span class="demo-card-image__filename" style="font-size: 1em">Bayu Nugraha</span>
@@ -157,11 +164,11 @@ echo $_SESSION['nis']; ?>
     </h6>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <button class="mdl-button mdl-js-button" value="" name="">
+    <button class="mdl-button mdl-js-button" value="" name="" style="background-color: #424242;">
       I CHOOSE
     </button>
   </div>
-</div>
+</div>-->
 </div>
 <!-- Card 2 End -->
 
@@ -182,13 +189,13 @@ echo $_SESSION['nis']; ?>
     </h6>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <button class="mdl-button mdl-js-button" value="" name="">
+    <button class="mdl-button mdl-js-button" value="" name="" style="background-color: #424242;">
       I CHOOSE
     </button>
   </div>
 </div>
 <br/>
-<div class="demo-card-image mdl-card reva">
+<!--<div class="demo-card-image mdl-card reva">
   <div class="mdl-card__title mdl-card--expand"></div>
   <div class="mdl-card__actions">
     <span class="demo-card-image__filename" style="font-size: 1em">Reva Puji Lestari</span>
@@ -203,11 +210,11 @@ echo $_SESSION['nis']; ?>
     </h6>
   </div>
   <div class="mdl-card__actions mdl-card--border">
-    <button class="mdl-button mdl-js-button" value="" name="">
+    <button class="mdl-button mdl-js-button" value="" name="" style="background-color: #424242;">
       I CHOOSE
     </button>
   </div>
-</div>
+</div>-->
 </div>
 <!-- Card 3 End -->
 </div>

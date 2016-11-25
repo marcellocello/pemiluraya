@@ -26,10 +26,16 @@ if (isset($_POST['check'])) {
 if(isset($_POST['signin'])){
   $sql = mysqli_query($con, "SELECT * FROM tbl_peserta WHERE `NIS` = '".$_POST['nis']."'");
   $lol = mysqli_fetch_array($sql);
-  if ($lol['Memilih']=='Sudah') {
-    echo "<Script>alert('Anda sudah memilih');document.location.href='index.php'</script>";
+  if ($_POST['token']==$lol['Token']) {
+    if ($lol['Memilih']=='Sudah') {
+      echo "<Script>alert('Anda Sudah Memilih');document.location.href='index.php'</script>";
+    } else {
+      echo "<script>document.location.href='calon';</script>";
+    } 
+  } else if($_POST['token']=="") {
+    echo "<script>alert('Token Tidak Boleh Kosong')</script>";
   } else {
-    echo "<script>document.location.href='calon';</script>";
+    echo "<script>alert('Token Yang Anda Masukkan Salah')</script>";
   }
 }
 
@@ -38,6 +44,12 @@ if(isset($_POST['signin'])){
 <html >
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Marcello Ryan">
+  <meta name="description" content="Pemilu Raya OSIS MPR SMK WIKRAMA BOGOR">
+  <meta name="keywords" content="Pemilu, Raya, OSIS, MPR, SMK, Wikrama, Bogor, HTML, PHP, CSS, MDL, Material, Design, Lite, Javascript, JS, SQL">
+
   <title>Pemilu Raya | osismprwikrama.org</title>
   
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/icon?family=Material+Icons'>
@@ -46,20 +58,20 @@ if(isset($_POST['signin'])){
 
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/img/logo.png">
-<style type="text/css">
-  @font-face {
-    font-family: fontdua;
-    src: url(kejar.id/kejarun/css2/fontastique.ttf);
-}
-</style>
 </head>
 
-<body>
+<body oncontextmenu="return false">
+<!--      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title" style="text-align: center; margin-left: 530px;">Pemilu Raya</span>
+        </div>
+      </header>-->
+
   <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
   <main class="mdl-layout__content">
     <div class="mdl-card mdl-shadow--6dp">
       <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-        <h2 class="mdl-card__title-text">Pemilu Raya</h2>
+        <h2 class="mdl-card__title-text">Login</h2>
       </div>
       <div class="mdl-card__supporting-text">
         <form method="post">
@@ -79,9 +91,17 @@ if(isset($_POST['signin'])){
             <input class="mdl-textfield__input" type="text" id="nama" disabled style="text-align: center;" value="<?php echo $nama; ?>">
           </div>
       </div>
-      <div class="mdl-card__actions mdl-card--border" style="padding: 20px 0 20px 20px;">
-          <button name="signin" <?php echo $signin; ?> class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Sign In
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--8-col">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" name="token" type="password" id="token" value="" onkeypress="return angkaOnly(event)" maxlength="8">
+            <label class="mdl-textfield__label" for="nis">Token</label>
+          </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+          <button name="signin" <?php echo $signin;; ?> class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">Sign In
           </button>
+        </div>
       </div>
         </form>
     </div><br/>
